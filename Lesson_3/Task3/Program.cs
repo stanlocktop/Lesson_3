@@ -1,21 +1,48 @@
-﻿namespace Distance
+﻿namespace Task2
 {
-    //Дана відстань у сантиметрах.Знайти кількість повних метрів у ньому.
-    //566 см => 5 м
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            int dist;
-            int initDist;
-            Console.WriteLine("Enter distance:");
-            string input = Console.ReadLine();
-            dist = int.Parse(input); // or INT32.Parse(input)
-            initDist = dist;
-            dist /= 100; // == dist = dist /100;  // int input 
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет
+            Console.Write("Введіть номер дня (1 - понеділок, ... 7 - неділя): ");
+            Console.ResetColor(); // сбрасываем в стандартный
+            int dayNumber = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Distanse is equal {dist}, initial distance is {initDist}");
-            Console.WriteLine("Distanse is equal {0}, initial distance is {1}", dist, initDist);
+            string dayName;
+
+            switch (dayNumber)
+            {
+                case 1:
+                    dayName = "Понеділок";
+                    break;
+                case 2:
+                    dayName = "Вівторок";
+                    break;
+                case 3:
+                    dayName = "Середа";
+                    break;
+                case 4:
+                    dayName = "Четвер";
+                    break;
+                case 5:
+                    dayName = "П'ятниця";
+                    break;
+                case 6:
+                    dayName = "Субота";
+                    break;
+                case 7:
+                    dayName = "Неділя";
+                    break;
+                default:
+                    dayName = "Не існує такого дня :)";
+                    break;
+            }
+            Console.ForegroundColor = ConsoleColor.Blue; // устанавливаем цвет
+            Console.WriteLine($"День під номером {dayNumber} - це {dayName} :)");
+            Console.ResetColor(); // сбрасываем в стандартный
+            Console.ReadKey();
         }
     }
 }
