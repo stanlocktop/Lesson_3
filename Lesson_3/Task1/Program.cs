@@ -1,16 +1,21 @@
-﻿namespace Number_PI
+﻿namespace Task1
 {
-    // Вивести на екран число π різними способами.
+//    1) Написати програму, яка перевіряє введене число на парність/непарність.
+
+//13 -> "непарне"
+
+//22 -> "парне"
     class Program
     {
         static void Main(string[] args)
         {
-            //1
-            Console.WriteLine(Math.PI);
-
-            //2
-            Console.WriteLine(Math.Acos(-1));
-
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.WriteLine("Введіть число: ");
+            int a = Convert.ToInt32(Console.Read());
+            {
+                if (a % 2 == 0) Console.WriteLine("Парне");
+                else Console.WriteLine("Непарне");
+            }
             Console.ReadKey();
         }
     }
