@@ -1,28 +1,38 @@
-﻿namespace SwappingValues
+﻿using System;
+
+class Program
 {
-    // Поміняти місцями значення двох змінних? Чи можна це зробити без ще однієї тимчасової змінної.
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        Console.Write("Введіть номер місяця від 1 до 12: ");
+        int month = int.Parse(Console.ReadLine());
+
+        string season = GetSeason(month);
+
+        if (season != "")
         {
-            byte a = 5;
-            byte b = 7;
-
-            //1
-            byte buf;
-            buf = a;
-            a = b;
-            b = buf;
-            Console.WriteLine(a);
-            Console.WriteLine(b);
-
-            //2      
-            // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators
-            a = (byte)(a + b);
-            b = (byte)(a - b);
-            a = (byte)(a - b);
-            Console.WriteLine(a);
-            Console.WriteLine(b);
+            Console.WriteLine($"Сезон: {season}");
         }
+        else
+        {
+            Console.WriteLine("Немає такого місяця на цій планеті :(");
+        }
+    }
+
+    static string GetSeason(int month)
+    {
+        if (month >= 1 && month <= 12)
+        {
+            if (month == 12 || month <= 2)
+                return "Зима";
+            else if (month <= 5)
+                return "Весна";
+            else if (month <= 8)
+                return "Літо";
+            else
+                return "Осінь";
+        }
+        return "";
     }
 }

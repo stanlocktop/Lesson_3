@@ -3,7 +3,7 @@
    //2) Необхідно написати консольну програму, де користувач вводитиме з клавіатури 2 числа.Числа будуть порівнюватися з наступним виведенням в консоль результату цього порівняння(чи рівні значення, а якщо ні, яке число більше/менше).
     public class Example
     {
-        public static void Main()
+        static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
             Console.Write("Введіть 1 число: ");
