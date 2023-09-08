@@ -4,7 +4,10 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Введіть номер місяця (1-12): ");
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        Console.ForegroundColor = ConsoleColor.Green; // устанавливаем цвет;
+        Console.Write("Введіть номер місяця від 1 до 12 --> ");
+        Console.ResetColor(); // сбрасываем в стандартный
         int month = int.Parse(Console.ReadLine());
 
         string season;
@@ -37,8 +40,9 @@ class Program
                     season = "Немає такого місяця на цій планеті";
                     break;
             }
-
+            Console.ForegroundColor = ConsoleColor.DarkBlue; // устанавливаем цвет;
             Console.WriteLine($"Сезон: {season}");
+            Console.ResetColor(); // сбрасываем в стандартный
         }
         else
         {
